@@ -6,8 +6,8 @@ import pygame
 from pygame.locals import *
 
 # variables
-size = [500, 500]
-rows = 7  # 10 max
+size = [700, 700]
+rows = 9  # 10 max
 spacing = int(size[0]/(1+2*rows))
 fadein = 1000
 fadeout = 3000
@@ -32,20 +32,20 @@ grey = (150, 150, 150)
 grey2 = (20, 20, 20)
 
 # initialize game engine
-pygame.mixer.pre_init(44100, -16, 2, 512)  # fixes delay in play
+pygame.mixer.pre_init(44100, -16, 2, 512, devicename="VoiceMeeter Input (VB-Audio Virtual Cable)")  # fixes delay in play
 pygame.init()
 
 # init channels
 pygame.mixer.set_num_channels(rows**2)
 
 # set screen width/height and caption
-screen = pygame.display.set_mode(size, pygame.NOFRAME)
+screen = pygame.display.set_mode(size)
 pygame.display.set_caption('pySoundBoard')
 
 # init fonts
-fontLogo = pygame.font.Font('res/Kathen.otf', int(spacing/2))
+fontLogo = pygame.font.Font('res/Kathen.otf', int(spacing/4))
 fontObj = pygame.font.Font('res/Hyperspace.otf', int(spacing/2.5))
-fontnames = pygame.font.Font('res/pragmata.otf', 12)
+fontnames = pygame.font.Font('res/pragmata.otf', 10)
 
 
 def readpaths():
